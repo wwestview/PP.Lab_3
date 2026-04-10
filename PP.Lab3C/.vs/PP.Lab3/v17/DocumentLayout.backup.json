@@ -1,26 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Nazar\\Desktop\\CsharpPOP2\\PP.Lab3\\",
+  "WorkspaceRootPath": "C:\\Users\\Nazar\\Desktop\\PoP.Lab3\\PP.Lab3C\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3A73A79E-AEB7-405C-9A98-66A4F04A0AF4}|PP.Lab3\\PP.Lab3.csproj|c:\\users\\nazar\\desktop\\csharppop2\\pp.lab3\\pp.lab3\\boundedstorage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3A73A79E-AEB7-405C-9A98-66A4F04A0AF4}|PP.Lab3\\PP.Lab3.csproj|c:\\users\\nazar\\desktop\\pop.lab3\\pp.lab3c\\pp.lab3\\boundedstorage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3A73A79E-AEB7-405C-9A98-66A4F04A0AF4}|PP.Lab3\\PP.Lab3.csproj|solutionrelative:pp.lab3\\boundedstorage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3A73A79E-AEB7-405C-9A98-66A4F04A0AF4}|PP.Lab3\\PP.Lab3.csproj|c:\\users\\nazar\\desktop\\csharppop2\\pp.lab3\\pp.lab3\\producer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3A73A79E-AEB7-405C-9A98-66A4F04A0AF4}|PP.Lab3\\PP.Lab3.csproj|solutionrelative:pp.lab3\\producer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3A73A79E-AEB7-405C-9A98-66A4F04A0AF4}|PP.Lab3\\PP.Lab3.csproj|c:\\users\\nazar\\desktop\\csharppop2\\pp.lab3\\pp.lab3\\workinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3A73A79E-AEB7-405C-9A98-66A4F04A0AF4}|PP.Lab3\\PP.Lab3.csproj|solutionrelative:pp.lab3\\workinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3A73A79E-AEB7-405C-9A98-66A4F04A0AF4}|PP.Lab3\\PP.Lab3.csproj|c:\\users\\nazar\\desktop\\csharppop2\\pp.lab3\\pp.lab3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3A73A79E-AEB7-405C-9A98-66A4F04A0AF4}|PP.Lab3\\PP.Lab3.csproj|c:\\users\\nazar\\desktop\\pop.lab3\\pp.lab3c\\pp.lab3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3A73A79E-AEB7-405C-9A98-66A4F04A0AF4}|PP.Lab3\\PP.Lab3.csproj|solutionrelative:pp.lab3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3A73A79E-AEB7-405C-9A98-66A4F04A0AF4}|PP.Lab3\\PP.Lab3.csproj|c:\\users\\nazar\\desktop\\csharppop2\\pp.lab3\\pp.lab3\\consumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3A73A79E-AEB7-405C-9A98-66A4F04A0AF4}|PP.Lab3\\PP.Lab3.csproj|c:\\users\\nazar\\desktop\\pop.lab3\\pp.lab3c\\pp.lab3\\consumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3A73A79E-AEB7-405C-9A98-66A4F04A0AF4}|PP.Lab3\\PP.Lab3.csproj|solutionrelative:pp.lab3\\consumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A73A79E-AEB7-405C-9A98-66A4F04A0AF4}|PP.Lab3\\PP.Lab3.csproj|c:\\users\\nazar\\desktop\\pop.lab3\\pp.lab3c\\pp.lab3\\workinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A73A79E-AEB7-405C-9A98-66A4F04A0AF4}|PP.Lab3\\PP.Lab3.csproj|solutionrelative:pp.lab3\\workinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A73A79E-AEB7-405C-9A98-66A4F04A0AF4}|PP.Lab3\\PP.Lab3.csproj|c:\\users\\nazar\\desktop\\pop.lab3\\pp.lab3c\\pp.lab3\\producer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A73A79E-AEB7-405C-9A98-66A4F04A0AF4}|PP.Lab3\\PP.Lab3.csproj|solutionrelative:pp.lab3\\producer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,26 +54,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "Consumer.cs",
-              "DocumentMoniker": "C:\\Users\\Nazar\\Desktop\\CsharpPOP2\\PP.Lab3\\PP.Lab3\\Consumer.cs",
+              "DocumentMoniker": "C:\\Users\\Nazar\\Desktop\\PoP.Lab3\\PP.Lab3C\\PP.Lab3\\Consumer.cs",
               "RelativeDocumentMoniker": "PP.Lab3\\Consumer.cs",
-              "ToolTip": "C:\\Users\\Nazar\\Desktop\\CsharpPOP2\\PP.Lab3\\PP.Lab3\\Consumer.cs",
+              "ToolTip": "C:\\Users\\Nazar\\Desktop\\PoP.Lab3\\PP.Lab3C\\PP.Lab3\\Consumer.cs",
               "RelativeToolTip": "PP.Lab3\\Consumer.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwB8AAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABMAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-09T15:44:45.735Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "Producer.cs",
-              "DocumentMoniker": "C:\\Users\\Nazar\\Desktop\\CsharpPOP2\\PP.Lab3\\PP.Lab3\\Producer.cs",
+              "DocumentMoniker": "C:\\Users\\Nazar\\Desktop\\PoP.Lab3\\PP.Lab3C\\PP.Lab3\\Producer.cs",
               "RelativeDocumentMoniker": "PP.Lab3\\Producer.cs",
-              "ToolTip": "C:\\Users\\Nazar\\Desktop\\CsharpPOP2\\PP.Lab3\\PP.Lab3\\Producer.cs",
+              "ToolTip": "C:\\Users\\Nazar\\Desktop\\PoP.Lab3\\PP.Lab3C\\PP.Lab3\\Producer.cs",
               "RelativeToolTip": "PP.Lab3\\Producer.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBoAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-09T15:44:27.869Z",
               "EditorCaption": ""
@@ -82,37 +82,37 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "BoundedStorage.cs",
-              "DocumentMoniker": "C:\\Users\\Nazar\\Desktop\\CsharpPOP2\\PP.Lab3\\PP.Lab3\\BoundedStorage.cs",
+              "DocumentMoniker": "C:\\Users\\Nazar\\Desktop\\PoP.Lab3\\PP.Lab3C\\PP.Lab3\\BoundedStorage.cs",
               "RelativeDocumentMoniker": "PP.Lab3\\BoundedStorage.cs",
-              "ToolTip": "C:\\Users\\Nazar\\Desktop\\CsharpPOP2\\PP.Lab3\\PP.Lab3\\BoundedStorage.cs",
+              "ToolTip": "C:\\Users\\Nazar\\Desktop\\PoP.Lab3\\PP.Lab3C\\PP.Lab3\\BoundedStorage.cs",
               "RelativeToolTip": "PP.Lab3\\BoundedStorage.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAzwB0AAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwCcAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-09T15:44:03.624Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "WorkInfo.cs",
-              "DocumentMoniker": "C:\\Users\\Nazar\\Desktop\\CsharpPOP2\\PP.Lab3\\PP.Lab3\\WorkInfo.cs",
+              "DocumentMoniker": "C:\\Users\\Nazar\\Desktop\\PoP.Lab3\\PP.Lab3C\\PP.Lab3\\WorkInfo.cs",
               "RelativeDocumentMoniker": "PP.Lab3\\WorkInfo.cs",
-              "ToolTip": "C:\\Users\\Nazar\\Desktop\\CsharpPOP2\\PP.Lab3\\PP.Lab3\\WorkInfo.cs",
+              "ToolTip": "C:\\Users\\Nazar\\Desktop\\PoP.Lab3\\PP.Lab3C\\PP.Lab3\\WorkInfo.cs",
               "RelativeToolTip": "PP.Lab3\\WorkInfo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-09T15:43:22.103Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Nazar\\Desktop\\CsharpPOP2\\PP.Lab3\\PP.Lab3\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\Nazar\\Desktop\\PoP.Lab3\\PP.Lab3C\\PP.Lab3\\Program.cs",
               "RelativeDocumentMoniker": "PP.Lab3\\Program.cs",
-              "ToolTip": "C:\\Users\\Nazar\\Desktop\\CsharpPOP2\\PP.Lab3\\PP.Lab3\\Program.cs",
+              "ToolTip": "C:\\Users\\Nazar\\Desktop\\PoP.Lab3\\PP.Lab3C\\PP.Lab3\\Program.cs",
               "RelativeToolTip": "PP.Lab3\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-08T19:47:15.371Z",
               "EditorCaption": ""

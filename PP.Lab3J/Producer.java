@@ -1,29 +1,17 @@
-import java.util.concurrent.CountDownLatch;
-
 public class Producer implements Runnable {
-    private final WorkerInfo info;
+    private final WorkInfo info;
     private final BoundedStorage storage;
-    private final CountDownLatch latch;
 
-    public Producer(WorkerInfo info, BoundedStorage storage, CountDownLatch latch) {
+    public Producer(WorkInfo info, BoundedStorage storage) {
         this.info = info;
         this.storage = storage;
-        this.latch = latch;
     }
 
     @Override
     public void run() {
-        try {
-            for (int i = 1; i <= info.count(); i++) {
-                String item = "Item " + i;
-                storage.put(item, info.id()); 
-                Thread.sleep(500); 
-            }
-            System.out.println(">>> Producer " + info.id() + " has finished their quota.");
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        } finally {
-            latch.countDown(); 
+        for (int i = 0; i < info.getQuota(); i++) {
+            try { Thread.sleep(500); } catch (InterruptedException e) { Thread.currentThread().interrupt(); }
+            storage.put(i, info.getId());
         }
     }
 }

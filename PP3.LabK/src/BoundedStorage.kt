@@ -1,35 +1,35 @@
-import java.util.ArrayDeque
+import java.util.LinkedList
 import java.util.Queue
 import java.util.concurrent.Semaphore
 
 class BoundedStorage(capacity: Int) {
+    private val queue: Queue<Int> = LinkedList()
     private val access = Semaphore(1)
     private val fullSlots = Semaphore(capacity)
     private val emptySlots = Semaphore(0)
-    
-    private val queue: Queue<String> = ArrayDeque(capacity)
 
-    fun put(item: String, producerId: Int) {
-        fullSlots.acquire()
-        access.acquire()
-        
+    fun put(item: Int, producerId: Int) {
         try {
+            fullSlots.acquire()
+            access.acquire()
             queue.add(item)
-            println("Producer $producerId added: $item. Total in storage: ${queue.size}")
+            println("Producer $producerId added item $item. Storage: ${queue.size}")
+        } catch (e: InterruptedException) {
+            Thread.currentThread().interrupt()
         } finally {
             access.release()
             emptySlots.release()
         }
     }
 
-    fun take(consumerId: Int): String {
-        emptySlots.acquire()
-        access.acquire()
-        
+    fun take(consumerId: Int) {
         try {
+            emptySlots.acquire()
+            access.acquire()
             val item = queue.poll()
-            println("Consumer $consumerId took: $item. Remaining: ${queue.size}")
-            return item
+            println("Consumer $consumerId took item $item. Storage: ${queue.size}")
+        } catch (e: InterruptedException) {
+            Thread.currentThread().interrupt()
         } finally {
             access.release()
             fullSlots.release()

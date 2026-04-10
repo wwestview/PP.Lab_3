@@ -1,1 +1,0 @@
-data class WorkerInfo(val id: Int, val count: Int)

@@ -1,4 +1,14 @@
 namespace PoPLab3
 {
-    public record WorkerInfo(int Id, int Count);
+    public class WorkInfo
+    {
+        public int Id { get; }
+        public int Quota { get; }
+
+        public WorkInfo(int id, int quota)
+        {
+            Id = id;
+            Quota = quota;
+        }
+    }
 }

@@ -1,0 +1,1 @@
+data class WorkInfo(val id: Int, val quota: Int)

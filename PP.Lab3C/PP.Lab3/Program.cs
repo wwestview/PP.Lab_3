@@ -6,37 +6,61 @@ namespace PoPLab3
 {
     class Program
     {
-        static void Main()
+        static void Main(string[] args)
         {
-            int storageLimit = 5;
-            int producersCount = 3;
-            int consumersCount = 2;
-            int itemsPerProducer = 4;
-            int itemsPerConsumer = 6;
+            Console.Write("Enter storage capacity: ");
+            int storageSize = int.Parse(Console.ReadLine());
 
-            var storage = new BoundedStorage(storageLimit);
+            Console.Write("Enter total number of items: ");
+            int totalItems = int.Parse(Console.ReadLine());
 
-            var countdown = new CountdownEvent(producersCount + consumersCount);
+            Console.Write("Enter number of Producers: ");
+            int producersCount = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("--- - Starting Operation - ---");
+            Console.Write("Enter number of Consumers: ");
+            int consumersCount = int.Parse(Console.ReadLine());
 
-            for (int i = 1; i <= producersCount; i++)
+            Console.WriteLine("\n--- Starting simulation ---");
+
+            BoundedStorage storage = new BoundedStorage(storageSize);
+            CountdownEvent countdown = new CountdownEvent(producersCount + consumersCount);
+
+            int baseProducerItems = totalItems / producersCount;
+            int remainderProducerItems = totalItems % producersCount;
+
+            for (int i = 0; i < producersCount; i++)
             {
-                var info = new WorkerInfo(i, itemsPerProducer);
-                var producer = new Producer(info, storage, countdown);
-                new Thread(producer.Run).Start();
+                int quota = baseProducerItems + (i < remainderProducerItems ? 1 : 0);
+                WorkInfo info = new WorkInfo(i + 1, quota);
+                Producer producer = new Producer(info, storage);
+
+                new Thread(() =>
+                {
+                    producer.Run();
+                    countdown.Signal();
+                }).Start();
             }
 
-            for (int i = 1; i <= consumersCount; i++)
+            int baseConsumerItems = totalItems / consumersCount;
+            int remainderConsumerItems = totalItems % consumersCount;
+
+            for (int i = 0; i < consumersCount; i++)
             {
-                var info = new WorkerInfo(i, itemsPerConsumer);
-                var consumer = new Consumer(info, storage, countdown);
-                new Thread(consumer.Run).Start();
+                int quota = baseConsumerItems + (i < remainderConsumerItems ? 1 : 0);
+                WorkInfo info = new WorkInfo(i + 1, quota);
+                Consumer consumer = new Consumer(info, storage);
+
+                new Thread(() =>
+                {
+                    consumer.Run();
+                    countdown.Signal();
+                }).Start();
             }
 
             countdown.Wait();
 
-            Console.WriteLine("--- - All operations completed successfully - ---");
+            Console.WriteLine("--- All threads completed successfully. ---");
+            Console.ReadKey();
         }
     }
 }

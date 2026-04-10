@@ -1,29 +1,53 @@
+import java.util.Scanner;
 import java.util.concurrent.CountDownLatch;
 
 public class Main {
     public static void main(String[] args) {
-        int storageLimit = 5;
-        int producersCount = 3;
-        int consumersCount = 2;
-        int itemsPerProducer = 4;
-        int itemsPerConsumer = 6;
+        Scanner scanner = new Scanner(System.in);
 
-        BoundedStorage storage = new BoundedStorage(storageLimit);
+        System.out.print("Enter storage capacity: ");
+        int storageSize = scanner.nextInt();
 
+        System.out.print("Enter total number of items: ");
+        int totalItems = scanner.nextInt();
+
+        System.out.print("Enter number of Producers: ");
+        int producersCount = scanner.nextInt();
+
+        System.out.print("Enter number of Consumers: ");
+        int consumersCount = scanner.nextInt();
+
+        System.out.println("\n--- Starting simulation (Java) ---");
+
+        BoundedStorage storage = new BoundedStorage(storageSize);
         CountDownLatch latch = new CountDownLatch(producersCount + consumersCount);
 
-        System.out.println("--- - Starting Operation - ---");
+        int baseProducerItems = totalItems / producersCount;
+        int remainderProducerItems = totalItems % producersCount;
 
-        for (int i = 1; i <= producersCount; i++) {
-            WorkerInfo info = new WorkerInfo(i, itemsPerProducer);
-            Thread thread = new Thread(new Producer(info, storage, latch));
-            thread.start();
+        for (int i = 0; i < producersCount; i++) {
+            int quota = baseProducerItems + (i < remainderProducerItems ? 1 : 0);
+            WorkInfo info = new WorkInfo(i + 1, quota);
+            Producer producer = new Producer(info, storage);
+
+            new Thread(() -> {
+                producer.run();
+                latch.countDown();
+            }).start();
         }
 
-        for (int i = 1; i <= consumersCount; i++) {
-            WorkerInfo info = new WorkerInfo(i, itemsPerConsumer);
-            Thread thread = new Thread(new Consumer(info, storage, latch));
-            thread.start();
+        int baseConsumerItems = totalItems / consumersCount;
+        int remainderConsumerItems = totalItems % consumersCount;
+
+        for (int i = 0; i < consumersCount; i++) {
+            int quota = baseConsumerItems + (i < remainderConsumerItems ? 1 : 0);
+            WorkInfo info = new WorkInfo(i + 1, quota);
+            Consumer consumer = new Consumer(info, storage);
+
+            new Thread(() -> {
+                consumer.run();
+                latch.countDown();
+            }).start();
         }
 
         try {
@@ -32,6 +56,6 @@ public class Main {
             Thread.currentThread().interrupt();
         }
 
-        System.out.println("--- - All operations completed successfully - ---");
+        System.out.println("--- All threads completed successfully. ---");
     }
 }

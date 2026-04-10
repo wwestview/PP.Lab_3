@@ -1,22 +1,8 @@
-import java.util.concurrent.CountDownLatch
-
-class Consumer(
-    private val info: WorkerInfo,
-    private val storage: BoundedStorage,
-    private val latch: CountDownLatch
-) : Runnable {
-
+class Consumer(private val info: WorkInfo, private val storage: BoundedStorage) : Runnable {
     override fun run() {
-        try {
-            for (i in 1..info.count) {
-                storage.take(info.id)
-                Thread.sleep(800)
-            }
-            println("<<< Consumer ${info.id} has finished their quota.")
-        } catch (e: InterruptedException) {
-            Thread.currentThread().interrupt()
-        } finally {
-            latch.countDown()
+        for (i in 0 until info.quota) {
+            Thread.sleep(500)
+            storage.take(info.id)
         }
     }
 }

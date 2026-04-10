@@ -2,33 +2,52 @@ import java.util.concurrent.CountDownLatch
 import kotlin.concurrent.thread
 
 fun main() {
-    val storageLimit = 5
-    val producersCount = 3
-    val consumersCount = 2
-    val itemsPerProducer = 4
-    val itemsPerConsumer = 6
+    print("Enter storage capacity: ")
+    val storageSize = readln().toInt()
 
-    val storage = BoundedStorage(storageLimit)
-    
+    print("Enter total number of items: ")
+    val totalItems = readln().toInt()
+
+    print("Enter number of Producers: ")
+    val producersCount = readln().toInt()
+
+    print("Enter number of Consumers: ")
+    val consumersCount = readln().toInt()
+
+    println("\n--- Starting simulation (Kotlin) ---")
+
+    val storage = BoundedStorage(storageSize)
     val latch = CountDownLatch(producersCount + consumersCount)
 
-    println("--- - Starting Operation - ---")
+    val baseProducerItems = totalItems / producersCount
+    val remainderProducerItems = totalItems % producersCount
 
-    for (i in 1..producersCount) {
-        val info = WorkerInfo(id = i, count = itemsPerProducer)
-        thread { Producer(info, storage, latch).run() }
+    for (i in 0 until producersCount) {
+        val quota = baseProducerItems + if (i < remainderProducerItems) 1 else 0
+        val info = WorkInfo(i + 1, quota)
+        val producer = Producer(info, storage)
+
+        thread {
+            producer.run()
+            latch.countDown()
+        }
     }
 
-    for (i in 1..consumersCount) {
-        val info = WorkerInfo(id = i, count = itemsPerConsumer)
-        thread { Consumer(info, storage, latch).run() }
+    val baseConsumerItems = totalItems / consumersCount
+    val remainderConsumerItems = totalItems % consumersCount
+
+    for (i in 0 until consumersCount) {
+        val quota = baseConsumerItems + if (i < remainderConsumerItems) 1 else 0
+        val info = WorkInfo(i + 1, quota)
+        val consumer = Consumer(info, storage)
+
+        thread {
+            consumer.run()
+            latch.countDown()
+        }
     }
 
-    try {
-        latch.await()
-    } catch (e: InterruptedException) {
-        Thread.currentThread().interrupt()
-    }
+    latch.await()
 
-    println("--- - All operations completed successfully - ---")
-}
+    println("--- All threads completed successfully. ---")
+}1
